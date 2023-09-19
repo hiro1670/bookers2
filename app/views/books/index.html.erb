@@ -1,3 +1,5 @@
+<div class="container">
+  <div class="row">
 <% if @book.errors.any? %>
     <%= @book.errors.count %> errors prohibited this book from being saved:
   <ul>
@@ -6,11 +8,14 @@
     <% end %>
   </ul>
 <% end %>
+<div class="col-md-3">
+<%= render 'list', books: @books %>
+</div>
 
-<div>
-  <h1>Books</h1>
-  <table>
-    <thead>
+<div class="col-md-8 offset-md-1">
+<h1 class="my-3 ml-3">Books</h1>
+    <table class="table table-hover">
+      <thead>
       <tr>
         <th></th>
         <th>Title</th>
@@ -26,7 +31,7 @@
       </tr>
     <% end %>
   </table>
+</div>
   
-  <%= render 'list', books: @books %>
-
+</div>
 </div>
