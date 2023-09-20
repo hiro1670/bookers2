@@ -5,7 +5,7 @@
     </div>
     
     <div class="col-3">
-      <%= render 'list', books: @books %>
+      <%= render 'list', book: @book_new %>
     </div>
 
 <div class="col-8 offset-md-1">
@@ -14,8 +14,9 @@
     <div>
       <table class="table">
         <tr>
-          <td><%= image_tag @user.get_profile_image(100,100) %></br>
-            <%= link_to @user.name, user_path %></td>
+          <td><%= link_to user_path(@book.user) do %>
+          <%= image_tag @book.user.get_profile_image(100,100) %>
+          <% end %></td>
           <td><%= @book.title%></td>
           <td><%= @book.body %></td>
             <% if @book.user == current_user %>

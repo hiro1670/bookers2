@@ -21,7 +21,7 @@
     <i class="fas fa-user-cog"></i>
     <% end %>
   <% else %>
-    <%= link_to user_path(@user.id), class: "btn btn-primary form-control" do %>
+    <%= link_to user_path, class: "btn btn-primary form-control" do %>
     <i class="fas fa-user-cog"></i>
     <% end %>
   <% end %>
@@ -32,7 +32,7 @@
     
     <div>
       <h2 class="my-3">New book</h2>
-        <%= form_with model: @book do |f| %>
+        <%= form_with model: book do |f| %>
 
       <h6>Title</h6>
         <%= f.text_field :title %>
