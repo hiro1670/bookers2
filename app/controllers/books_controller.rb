@@ -59,6 +59,6 @@ class BooksController < ApplicationController
   def ensure_user
     @books = current_user.books
     @book = @books.find_by(id: params[:id])
-    redirect_to user_path unless @book
+    redirect_to books_path unless @book
   end
 end
